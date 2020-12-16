@@ -5,5 +5,17 @@ install:
 freeze:
 	python -m pip freeze > requirements.txt
 
+sdist:
+	python setup.py sdist
+
+upload:
+	twine upload dist/*
+
+clean:
+	rm -rf *.egg-info
+	rm -rf dist/
+
 test:
 	python -m pytest
+
+deploy: clean sdist upload
