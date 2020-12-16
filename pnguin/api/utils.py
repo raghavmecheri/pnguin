@@ -25,3 +25,18 @@ FORMATTER = {"row": _format_to_rows, "col": _format_to_col, "dual": _format_to_d
 
 def format_input(data, t):
     return FORMATTER[t](data)
+
+
+def pull_rows_from_cols(cols, s, n):
+    rows = []
+    for name, row in cols.items():
+        for i in range(n):
+            if i >= len(row):
+                break
+            if len(rows) > i:
+                rows[i][name] = row[i]
+            else:
+                tmp = {}
+                tmp[name] = row[i]
+                rows.append(tmp.copy())
+    return rows
