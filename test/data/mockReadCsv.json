@@ -1,0 +1,41 @@
+[{
+	"path": "test/data/headerdata.csv",
+	"axis": "row",
+	"length": 5,
+	"specifyHeaders": false
+}, {
+	"path": "test/data/headerdata.csv",
+	"axis": "col",
+	"length": 5,
+	"specifyHeaders": false
+}, {
+	"path": "test/data/headerdata.csv",
+	"axis": "row",
+	"length": 6,
+	"specifyHeaders": true
+}, {
+	"path": "test/data/headerdata.csv",
+	"axis": "col",
+	"length": 6,
+	"specifyHeaders": true
+}, {
+	"path": "test/data/noheaderdata.csv",
+	"axis": "row",
+	"length": 4,
+	"specifyHeaders": false
+}, {
+	"path": "test/data/noheaderdata.csv",
+	"axis": "row",
+	"length": 4,
+	"specifyHeaders": false
+}, {
+	"path": "test/data/noheaderdata.csv",
+	"axis": "row",
+	"length": 5,
+	"specifyHeaders": true
+}, {
+	"path": "test/data/noheaderdata.csv",
+	"axis": "row",
+	"length": 5,
+	"specifyHeaders": true
+}]

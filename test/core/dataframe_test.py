@@ -5,7 +5,7 @@ import pnguin as pg
 
 
 def _fetch_mock_payloads():
-    with open("test/data/mockPayloads.json") as f:
+    with open("test/data/mockInit.json") as f:
         return json.load(f)
 
 
