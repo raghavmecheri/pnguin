@@ -15,7 +15,9 @@ clean:
 	rm -rf *.egg-info
 	rm -rf dist/
 
-test:
+test: FORCE
 	python -m pytest
 
 deploy: clean sdist upload
+
+FORCE: 

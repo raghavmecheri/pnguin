@@ -10,9 +10,9 @@ from pnguin.api.utils import format_input, drop_nan_rows, apply_rows, apply_cols
 
 class DataFrame(Frame):
     @validate_arguments
-    def __init__(self, data: list, axis: Axis = Axis.col):
+    def __init__(self, data, axis: Axis = Axis.col):
         self.axis = axis
-        self.data, self.headers = format_input(data, axis)
+        self.data = format_input(data, axis)
 
     @validate_arguments
     def head(self, n: int = 5):
@@ -33,7 +33,7 @@ class DataFrame(Frame):
     @validate_arguments
     def apply(self, x: Callable, axis: Axis = Axis.row, inplace: bool = False):
         target = self._data_as_rows() if axis == Axis.row else self._data_as_cols()
-        applied = apply_rows(target) if axis == Axis.row else apply_cols(target)
+        applied = apply_rows(target, x) if axis == Axis.row else apply_cols(target, x)
         if inplace:
             self.data = format_input(applied, self.axis)
         return format_input(applied, self.axis)
@@ -57,7 +57,7 @@ class DataFrame(Frame):
         return self.data if self.axis == Axis.col else format_input(self.data, Axis.col)
 
     def _to_string(self):
-        return tabulate(self.head().data, headers=self.headers)
+        return tabulate(self.head().data, headers="keys")
 
     def __repr__(self):
         return self._to_string()

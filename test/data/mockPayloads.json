@@ -1,0 +1,37 @@
+[{
+	"axis": "row",
+	"data": [{
+		"name": "Raghav",
+		"occupation": "Bored",
+		"message": "Pandas was annoying me, so I built this instead"
+	}, {
+		"name": "Raghav2",
+		"occupation": "Bored2",
+		"message": "Another one"
+	}]
+}, {
+	"axis": "col",
+	"data": {
+		"name": ["Raghav", "Raghav2"],
+		"occupation": ["Bored", "Bored2"],
+		"message": ["Pandas was annoying me, so I built this instead", "Another one"]
+	}
+}, {
+	"axis": "row",
+	"data": {
+		"name": ["Raghav", "Raghav2"],
+		"occupation": ["Bored", "Bored2"],
+		"message": ["Pandas was annoying me, so I built this instead", "Another one"]
+	}
+}, {
+	"axis": "col",
+	"data": [{
+		"name": "Raghav",
+		"occupation": "Bored",
+		"message": "Pandas was annoying me, so I built this instead"
+	}, {
+		"name": "Raghav2",
+		"occupation": "Bored2",
+		"message": "Another one"
+	}]
+}]

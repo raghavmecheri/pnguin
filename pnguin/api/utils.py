@@ -1,5 +1,6 @@
 from collections import defaultdict
 import numpy as np
+from pnguin.models import Axis
 
 
 def _format_to_cols(data):
@@ -9,28 +10,33 @@ def _format_to_cols(data):
         for key, value in datapoint.items():
             n_data[key].append(value)
 
-    return dict(n_data), list(data[0].keys())
+    return dict(n_data)
 
 
 def _format_to_rows(dl):
-    return [
-        {key: value[index] for key, value in dl.items()}
-        for index in range(len(dl.values()[0]))
-    ]
+    return [dict(zip(dl, t)) for t in zip(*dl.values())]
 
 
-_ROWS = {"row": lambda x: x, "col": _format_to_cols}
+def _transform_rows(x, t):
+    if t == Axis.row:
+        return x
+    else:
+        return _format_to_cols(x)
 
-_COLS = {"row": _format_to_rows, "col": lambda x: x}
 
-FORMATTER = {"row": _ROWS, "col": _COLS}
+def _transform_cols(x, t):
+    if t == Axis.col:
+        return x
+    else:
+        return _format_to_rows(x)
 
 
 def format_input(data, t):
     def _fmt(x):
-        return "row" if isinstance(data, list) else "col"
+        return Axis.row if isinstance(data, list) else Axis.col
 
-    return FORMATTER[_fmt(data)][t](data)
+    f = _transform_rows if _fmt(data) == Axis.row else _transform_cols
+    return f(data, t)
 
 
 def drop_nan_rows(rows, exclude):
@@ -49,3 +55,11 @@ def drop_nan_rows(rows, exclude):
         if not np.isnan(targets):
             n_rows.append(row)
     return n_rows
+
+
+def apply_rows(rows, f):
+    return rows
+
+
+def apply_cols(cols, f):
+    return cols
