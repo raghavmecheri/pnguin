@@ -17,8 +17,6 @@
 [![GA Build Status](https://img.shields.io/github/workflow/status/raghavmecheri/pnguin/Test%20&%20Build/main?style=for-the-badge)](https://github.com/raghavmecheri/pnguin/actions)
 [![license](https://img.shields.io/github/license/raghavmecheri/pnguin?style=for-the-badge)](https://img.shields.io/github/license/raghavmecheri/pnguin?style=for-the-badge)
 
-**Your models must be exported to torchscript in order to work with pytorchjs. Check [this](https://github.com/raghavmecheri/pytorchjs/blob/master/examples/Exporting/Exporting.md) out for an example!**
-
 </div>
 
 ---
@@ -42,5 +40,4 @@ This library is currently in development
 * Distributed under the MIT license. See [LICENSE](./LICENSE) for more information.
 
 ## Why pnguin?
-Well, Penguins are cute. Pandas are cute. This is a Pandas alternative, and the name `penguin` was taken. So I just got rid of the `e`. 
-On a fun side note though, this let's us now use this as: `import pnguin as pn` -- close enough to `import pandas as pd`, don't you think?
+Well, Penguins are cute. Pandas are cute. This is a Pandas alternative, and the name _penguin_ was taken. So I just got rid of the _e_ :) 
