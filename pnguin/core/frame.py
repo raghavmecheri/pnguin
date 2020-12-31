@@ -17,3 +17,20 @@ class Frame:
 
     def to_db(self):
         pass
+
+
+class RemoteFrame:
+    def head(self, n: int = 5):
+        pass
+
+    def dropna(self, exclude: list = [], inplace: bool = False):
+        pass
+
+    def apply(self, x: Callable, axis: Axis = Axis.col, inplace: bool = False):
+        pass
+
+    def to_csv(self):
+        pass
+
+    def to_df(self):
+        pass
