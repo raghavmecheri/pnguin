@@ -14,3 +14,9 @@ def mysql_conn(
         charset="utf8mb4",
         cursorclass=pymysql.cursors.DictCursor,
     )
+
+
+def bigquery_conn():
+    from google.cloud import bigquery
+
+    return bigquery.Client()

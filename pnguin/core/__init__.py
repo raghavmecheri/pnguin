@@ -1,6 +1,7 @@
 from pydantic import validate_arguments, ValidationError
 
 from pnguin.core.dataframe import DataFrame
+from pnguin.core.remoteframes import SQLFrame, BQFrame
 
 from pnguin.api.io import read_csv_to_data
 from pnguin.models import Axis

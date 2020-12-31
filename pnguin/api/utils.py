@@ -63,3 +63,15 @@ def apply_rows(rows, f):
 
 def apply_cols(cols, f):
     return cols
+
+
+def bq_to_rows(rows):
+    def _reformat(x):
+        pairs = x.items()
+        row = {}
+        for pair in pairs:
+            key, value = pair
+            row[key] = value
+        return row
+
+    return [_reformat(x) for x in rows]
