@@ -5,14 +5,24 @@ from typing import Callable
 
 from pnguin.core.frame import Frame
 from pnguin.models import Axis
-from pnguin.api.utils import format_input, drop_nan_rows, apply_rows, apply_cols
+from pnguin.api.utils import (
+    format_input,
+    drop_nan_rows,
+    apply_rows,
+    apply_cols,
+    is_valid_index,
+    fetch_item,
+    set_item,
+)
+from pnguin.api.io import print_warning
 
 
 class DataFrame(Frame):
     @validate_arguments
-    def __init__(self, data, axis: Axis = Axis.col):
+    def __init__(self, data, axis: Axis = Axis.col, warnings: bool = True):
         self.axis = axis
         self.data = format_input(data, axis)
+        self.warnings = warnings
 
     @validate_arguments
     def head(self, n: int = 5):
@@ -64,3 +74,34 @@ class DataFrame(Frame):
 
     def __str__(self):
         return self._to_string()
+
+    def __getitem__(self, key):
+        is_valid, msg, target_axis = is_valid_index(key, self.axis)
+        if not is_valid:
+            print_warning(
+                "{} Pnguin auto-handles this, but this could take a second for larger datasets".format(
+                    msg
+                ),
+                self.warnings,
+            )
+            return format_input(self.data, target_axis)[key]
+        return fetch_item(self.data, key)
+
+    def __setitem__(self, key, value):
+        is_valid, msg, target_axis = is_valid_index(key, self.axis)
+        if not is_valid:
+            print_warning(
+                "{} Pnguin auto-handles this, but this could take a second for larger datasets".format(
+                    msg
+                ),
+                self.warnings,
+            )
+            data = (
+                self._data_as_cols()
+                if target_axis == Axis.col
+                else self._data_as_rows()
+            )
+            set_item(data, key, value)
+            self.data = format_input(data, self.axis)
+        else:
+            set_item(self.data, key, value)

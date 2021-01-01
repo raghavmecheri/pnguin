@@ -10,3 +10,8 @@ def read_csv_to_data(path: str, delimiter: str = ",", headers: list = []):
                 entry[header[i].strip()] = value.strip()
             data.append(entry)
     return data
+
+
+def print_warning(message, to_warn):
+    if to_warn:
+        print("Warning: {}".format(message))
