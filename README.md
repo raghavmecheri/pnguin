@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/raghavmecheri/pnguin/main/website/static/img/pnguin.png" width="300px">
+<img src="https://raw.githubusercontent.com/raghavmecheri/pnguin/main/website/static/img/pnguin_text.png" width="300px">
 
 
 **Fixing DataFrames, one step at a time**
