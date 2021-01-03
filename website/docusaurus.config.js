@@ -6,14 +6,14 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'raghavmecheri', // Usually your GitHub org/user name.
+  projectName: 'pnguin', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'My Site',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/pnguin.png',
       },
       items: [
         {
@@ -82,7 +82,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Raghav Mecheri. Built with Docusaurus.`,
     },
   },
   presets: [
