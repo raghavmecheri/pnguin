@@ -140,5 +140,8 @@ cython_debug/
 # Ignore vscode files
 .vscode/
 
+# Ignore API autodocs
+website/static/api
+
 # Credentials for Google Cloud
 keyfile.json
