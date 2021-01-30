@@ -286,3 +286,35 @@ def set_item(x, k, val):
                 "Input format error: The lengths of the target column and the column being set must be equal"
             )
         x[k] = val
+
+
+def write_to_csv(df, filename):
+    """Given a pnguin dataframe, write the data to a csv file
+
+    Args:
+        df (pnguin.DataFrame): DataFrame to write to csv
+        filename (str): Filepath to write to
+
+    """
+
+    import csv
+
+    def _col_to_csv(x, filename):
+        with open(filename, "w") as outfile:
+            writer = csv.writer(outfile)
+            writer.writerow(x.keys())
+            writer.writerows(zip(*x.values()))
+
+    def _row_to_csv(x, filename):
+        keys = x[0].keys()
+        with open(filename, "w", newline="") as output_file:
+            dict_writer = csv.DictWriter(output_file, keys)
+            dict_writer.writeheader()
+            dict_writer.writerows(x)
+
+    if df.axis == Axis.col:
+        print("Writing your column-wise dataframe as a csv file at {}".format(filename))
+        _col_to_csv(df.data, filename)
+    else:
+        print("Writing your row-wise dataframe as a csv file at {}".format(filename))
+        _row_to_csv(df.data, filename)

@@ -12,7 +12,10 @@ class Frame:
     def apply(self, x: Callable, axis: Axis = Axis.col, inplace: bool = False):
         pass
 
-    def to_csv(self):
+    def iterate(self):
+        pass
+
+    def to_csv(self, filename: str):
         pass
 
     def to_db(self):

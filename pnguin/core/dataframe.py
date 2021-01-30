@@ -13,6 +13,7 @@ from pnguin.api.utils import (
     is_valid_index,
     fetch_item,
     set_item,
+    write_to_csv,
 )
 from pnguin.api.io import print_warning
 
@@ -105,10 +106,20 @@ class DataFrame(Frame):
         return format_input(applied, self.axis)
 
     @validate_arguments
-    def to_csv(self):
-        raise NotImplementedError(
-            "The to_csv function of the DataFrame class is yet to be implemented"
-        )
+    def iterate(self):
+        """Return a row-wise pnguin iterator
+
+        Args:
+            axis (str): The target axis to be iterated ('row' by default)
+
+        Returns:
+            Iterable object of rows/columns
+        """
+        return iter(self._data_as_rows())
+
+    @validate_arguments
+    def to_csv(self, filename: str):
+        write_to_csv(self, filename)
 
     @validate_arguments
     def to_db(self):
