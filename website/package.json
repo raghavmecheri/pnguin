@@ -7,9 +7,9 @@
     "api-build": "cd ../docs && make html && cp -r _build/html ../website/build/api/_static/ && cd ../website",
     "docusaurus": "docusaurus",
     "start": "yarn api && docusaurus start",
-    "build": "docusaurus build && yarn api-build",
+    "build": "yarn api && docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
+    "deploy": "yarn api && docusaurus deploy",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear"
   },
