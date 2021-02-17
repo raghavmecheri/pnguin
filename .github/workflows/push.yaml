@@ -29,6 +29,9 @@ jobs:
           export PYTHONPATH=$PYTHONPATH:$(pwd)
           make test
 
+      - name: Run linecount check
+        run: make linecount
+
 
   Deploy:
     runs-on: ubuntu-latest

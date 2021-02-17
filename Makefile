@@ -15,6 +15,9 @@ clean:
 	rm -rf *.egg-info
 	rm -rf dist/
 
+linecount:
+	pygount --suffix=py --format=summary ./pnguin | ./linecount.sh
+
 test: FORCE
 	python -m pytest
 

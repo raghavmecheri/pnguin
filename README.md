@@ -11,6 +11,7 @@
   <a href="#usage">Usage</a> •
   <a href="#examples">Examples</a> •
   <a href="#key-features">Key Features</a> •
+  <a href="#the-promise-of-small">Succinct Codebase</a> •
   <a href="#misc">Misc</a> •
 </p>
 
@@ -36,8 +37,11 @@ This library is currently in development
 ## Key Features
 This library is currently in development
 
+## The Promise of Small
+Inspired by [Geohot](https://github.com/geohot)'s [TinyGrad](https://github.com/geohot/tinygrad), this repository will never exceed a 1000 lines of code. If it does, we will revert PRs until the repository's source code is less than or equal to 1000 lines.
+
 ## Misc
-* Distributed under the MIT license. See [LICENSE](./LICENSE) for more information.
+Distributed under the MIT license. See [LICENSE](./LICENSE) for more information.
 
 ## Why pnguin?
 Well, Penguins are cute. Pandas are cute. This is a Pandas alternative, and the name _penguin_ was taken. So I just got rid of the _e_ :) 
