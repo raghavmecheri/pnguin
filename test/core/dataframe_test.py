@@ -66,5 +66,9 @@ def test_apply():
     assert True is True
 
 
-def test_print():
-    assert True is True
+@pytest.mark.parametrize("payload", [_nanify(x) for x in _fetch_mock_payloads()])
+def test_tostring(payload):
+    data, axis = payload["data"], payload["axis"]
+    df = pg.DataFrame(data=data, axis=axis)
+    x = df._to_string()
+    assert x is not None
