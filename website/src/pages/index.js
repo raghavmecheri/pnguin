@@ -12,28 +12,28 @@ const features = [
     imageUrl: 'img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        pnguin was designed from the ground up to actually <b>work</b>. No complicated functions,
+        no confusing approaches to data manipulation. Access, read, and edit datasets in seconds.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Two Axes > One Axis',
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Columnar DataFrames are annoying. pnguin enables bi-axial DataFrames,
+        allowing for both column and row based data access. It's fast, and it's convinient.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Remote DataFrames',
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        RemoteFrames allow you to stream both SQL and BigQuery datasets to your notebook.
+        View and query without actually loading data in memory, and convert to a DataFrame to edit.
       </>
     ),
   },
@@ -48,8 +48,8 @@ function Feature({imageUrl, title, description}) {
           <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
       )}
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <h3 style={{textAlign: "center"}}>{title}</h3>
+      <p style={{textAlign: "center"}}>{description}</p>
     </div>
   );
 }

@@ -1,18 +1,18 @@
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
+  title: 'pnguin',
+  tagline: 'Loading and exploring your data, fixed.',
   url: 'https://raghavmecheri.me',
   baseUrl: '/pnguin/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'raghavmecheri', // Usually your GitHub org/user name.
-  projectName: 'pnguin', // Usually your repo name.
+  organizationName: 'raghavmecheri',
+  projectName: 'pnguin',
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'pnguin',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'The pnguin logo',
         src: 'img/pnguin.png',
       },
       items: [
