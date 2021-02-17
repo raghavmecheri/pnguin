@@ -1,6 +1,6 @@
 module.exports = {
   title: 'pnguin',
-  tagline: 'Loading and exploring your data, fixed.',
+  tagline: 'Simple, concise, and easy DataFrames',
   url: 'https://raghavmecheri.me',
   baseUrl: '/pnguin/',
   onBrokenLinks: 'warn',
@@ -42,12 +42,12 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
+              label: 'About',
               to: 'docs/',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
+              label: 'Getting Started',
+              to: 'docs/overview/',
             },
           ],
         },

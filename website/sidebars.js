@@ -1,6 +1,6 @@
 module.exports = {
   someSidebar: {
-  	"About": ['doc1', 'doc2', 'doc3'],
-    "Getting Started": ['doc1', 'doc2', 'doc3']
+  	"About": ['about', 'dataframes', 'remoteframes'],
+    "Getting Started": ['overview', 'localloading', 'remoteloading', 'dfops', 'rfops']
   },
 };
