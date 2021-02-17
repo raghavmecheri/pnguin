@@ -11,7 +11,6 @@
   <a href="#usage">Usage</a> •
   <a href="#examples">Examples</a> •
   <a href="#key-features">Key Features</a> •
-  <a href="#the-promise-of-small">Succinct Codebase</a> •
   <a href="#misc">Misc</a> •
 </p>
 
