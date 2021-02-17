@@ -25,7 +25,7 @@
 pnguin is a feature rich, minimalist and modular DataFrame library, capable of working both with good 'ol CSV files, as well as with remote databases
 
 ## The pnguin mindset
-When it comes to source code, less is sometimes more -- a minset that pnguin completely embraces. With powerful core functionality built in, pnguin serves as a simple, one-stop shop for your DataFrame needs. *Oh, and we support remote connections.*
+pnguin's extreme simplicity makes it the easiest DataFrame library to perform custom operations on. With support for both row and column indexing, and powerful core functionality built in, pnguin serves as a simple, one-stop shop for your DataFrame needs. *Oh, and we support remote connections.*
 
 ## Usage
 This library is currently in development
