@@ -61,8 +61,10 @@ class DataFrame(Frame):
 
         """
         if self.axis == Axis.row:
-            return DataFrame(self.data[0 : n + 1], self.axis)
-        return DataFrame(format_input(self.data, Axis.col), self.axis)
+            return DataFrame(self.data[0:n], self.axis)
+
+        row_data = format_input(self.data, Axis.row)
+        return DataFrame(row_data[0:n], self.axis)
 
     @validate_arguments
     def dropna(self, exclude: list = [], inplace: bool = False):
@@ -83,7 +85,7 @@ class DataFrame(Frame):
             self.data = format_input(rectified, self.axis)
             return None
 
-        return format_input(rectified, self.axis)
+        return DataFrame(rectified, self.axis)
 
     @validate_arguments
     def apply(self, x: Callable, axis: Axis = Axis.row, inplace: bool = False):

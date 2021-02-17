@@ -2,7 +2,7 @@
 
 This module contains a collection of utility functions and helpers that are used throughout the pnguin project.
 """
-
+import math
 from collections import defaultdict
 import numpy as np
 from pnguin.models import Axis
@@ -111,17 +111,25 @@ def drop_nan_rows(rows, exclude):
 
     def _pull_target_elements(r, ex):
         if len(ex) == 0:
-            return r.values()
+            return list(r.values())
         x = []
         for key, value in r.items():
             if key not in ex:
                 x.append(value)
         return x
 
+    def _arr_contains_nan(arr):
+        check = False
+        for x in arr:
+
+            if not isinstance(x, str) and math.isnan(x):
+                check = True
+        return check
+
     n_rows = []
     for row in rows:
         targets = _pull_target_elements(row, exclude)
-        if not np.isnan(targets):
+        if not _arr_contains_nan(targets):
             n_rows.append(row)
     return n_rows
 
