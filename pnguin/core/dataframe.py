@@ -105,7 +105,7 @@ class DataFrame(Frame):
         if inplace:
             self.data = format_input(applied, self.axis)
             return None
-        return format_input(applied, self.axis)
+        return DataFrame(applied, self.axis)
 
     @validate_arguments
     def iterate(self):

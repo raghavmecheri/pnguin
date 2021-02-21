@@ -147,7 +147,7 @@ def apply_rows(rows, f):
         list: A list of modified rows post function call
 
     """
-    return rows
+    return [f(row) for row in rows]
 
 
 def apply_cols(cols, f):

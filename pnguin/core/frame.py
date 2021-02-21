@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from pnguin.models import Axis
 from typing import Callable
 
@@ -23,17 +25,23 @@ class Frame:
 
 
 class RemoteFrame:
-    def head(self, n: int = 5):
+    def head(self, n: int = 5) -> Frame:
         pass
 
-    def dropna(self, exclude: list = [], inplace: bool = False):
+    def dropna(self, exclude: list = []) -> Frame:
         pass
 
-    def apply(self, x: Callable, axis: Axis = Axis.col, inplace: bool = False):
+    def apply(self, x: Callable, axis: Axis = Axis.col) -> Frame:
         pass
 
-    def to_csv(self):
+    def to_csv(self) -> Frame:
         pass
 
-    def to_df(self):
+    def to_df(self) -> Frame:
+        pass
+
+    def __getitem__(self, key) -> RemoteFrame:
+        pass
+
+    def __setitem__(self, key, value) -> Frame:
         pass
