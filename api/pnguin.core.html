@@ -306,27 +306,27 @@ pnguin will convert the format of your data on the fly to make it all work.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt id="pnguin.core.frame.RemoteFrame.apply">
-<code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">x: Callable</em>, <em class="sig-param">axis: pnguin.models.axis.Axis = &lt;Axis.col: 'col'&gt;</em>, <em class="sig-param">inplace: bool = False</em><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.frame.RemoteFrame.apply" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">x: Callable</em>, <em class="sig-param">axis: pnguin.models.axis.Axis = &lt;Axis.col: 'col'&gt;</em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.frame.RemoteFrame.apply" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="pnguin.core.frame.RemoteFrame.dropna">
-<code class="sig-name descname">dropna</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">exclude</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">inplace</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.frame.RemoteFrame.dropna" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">dropna</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">exclude</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.frame.RemoteFrame.dropna" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="pnguin.core.frame.RemoteFrame.head">
-<code class="sig-name descname">head</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.frame.RemoteFrame.head" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">head</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">5</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.frame.RemoteFrame.head" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="pnguin.core.frame.RemoteFrame.to_csv">
-<code class="sig-name descname">to_csv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.frame.RemoteFrame.to_csv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_csv</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.frame.RemoteFrame.to_csv" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="pnguin.core.frame.RemoteFrame.to_df">
-<code class="sig-name descname">to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.frame.RemoteFrame.to_df" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.frame.RemoteFrame.to_df" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -347,31 +347,31 @@ pnguin will convert the format of your data on the fly to make it all work.</p>
 
 <dl class="py class">
 <dt id="pnguin.core.remoteframes.SQLFrame">
-<em class="property">class </em><code class="sig-prename descclassname">pnguin.core.remoteframes.</code><code class="sig-name descname">SQLFrame</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">connection</span><span class="p">:</span> <span class="n">Any</span></em>, <em class="sig-param"><span class="n">table_name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pnguin.core.remoteframes.</code><code class="sig-name descname">SQLFrame</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">connection</span><span class="p">:</span> <span class="n">Any</span></em>, <em class="sig-param"><span class="n">table_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">warnings</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pnguin.core.frame.RemoteFrame" title="pnguin.core.frame.RemoteFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">pnguin.core.frame.RemoteFrame</span></code></a></p>
 <dl class="py method">
 <dt id="pnguin.core.remoteframes.SQLFrame.apply">
-<code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">x: Callable</em>, <em class="sig-param">axis: pnguin.models.axis.Axis = &lt;Axis.col: 'col'&gt;</em>, <em class="sig-param">inplace: bool = False</em><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame.apply" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">x: Callable</em>, <em class="sig-param">axis: pnguin.models.axis.Axis = &lt;Axis.col: 'col'&gt;</em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame.apply" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="pnguin.core.remoteframes.SQLFrame.dropna">
-<code class="sig-name descname">dropna</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">exclude</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">inplace</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame.dropna" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">dropna</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">exclude</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">[]</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame.dropna" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="pnguin.core.remoteframes.SQLFrame.head">
-<code class="sig-name descname">head</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame.head" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">head</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">5</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame.head" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="pnguin.core.remoteframes.SQLFrame.to_csv">
-<code class="sig-name descname">to_csv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame.to_csv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_csv</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame.to_csv" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="pnguin.core.remoteframes.SQLFrame.to_df">
-<code class="sig-name descname">to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame.to_df" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame.to_df" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
