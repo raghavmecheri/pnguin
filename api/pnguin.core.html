@@ -219,6 +219,11 @@ pnguin will convert the format of your data on the fly to make it all work.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="pnguin.core.dataframe.DataFrame.filter">
+<code class="sig-name descname">filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="p">:</span> <span class="n">pnguin.core.filter.Filter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.dataframe.DataFrame.filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="pnguin.core.dataframe.DataFrame.head">
 <code class="sig-name descname">head</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.dataframe.DataFrame.head" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the head (or the top n rows) of your DataFrame</p>
@@ -279,6 +284,11 @@ pnguin will convert the format of your data on the fly to make it all work.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="pnguin.core.frame.Frame.filter">
+<code class="sig-name descname">filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filter</span><span class="p">:</span> <span class="n">pnguin.core.filter.Filter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.frame.Frame.filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="pnguin.core.frame.Frame.head">
 <code class="sig-name descname">head</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pnguin.core.frame.Frame.head" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -321,12 +331,12 @@ pnguin will convert the format of your data on the fly to make it all work.</p>
 
 <dl class="py method">
 <dt id="pnguin.core.frame.RemoteFrame.to_csv">
-<code class="sig-name descname">to_csv</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.frame.RemoteFrame.to_csv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_csv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.frame.RemoteFrame.to_csv" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="pnguin.core.frame.RemoteFrame.to_df">
-<code class="sig-name descname">to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.frame.RemoteFrame.to_df" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_df</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">axis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="pnguin.models.html#pnguin.models.axis.Axis" title="pnguin.models.axis.Axis">pnguin.models.axis.Axis</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.frame.RemoteFrame.to_df" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -366,12 +376,12 @@ pnguin will convert the format of your data on the fly to make it all work.</p>
 
 <dl class="py method">
 <dt id="pnguin.core.remoteframes.SQLFrame.to_csv">
-<code class="sig-name descname">to_csv</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame.to_csv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_csv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame.to_csv" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="pnguin.core.remoteframes.SQLFrame.to_df">
-<code class="sig-name descname">to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame.to_df" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_df</code><span class="sig-paren">(</span><em class="sig-param">axis: pnguin.models.axis.Axis = &lt;Axis.col: 'col'&gt;</em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#pnguin.core.frame.Frame" title="pnguin.core.frame.Frame">pnguin.core.frame.Frame</a><a class="headerlink" href="#pnguin.core.remoteframes.SQLFrame.to_df" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
