@@ -29,6 +29,7 @@ class SQLFrame(RemoteFrame):
         data = self._get_data(n)
         return DataFrame(data, Axis.row)
 
+    @validate_arguments
     def dropna(self, exclude: list = []) -> Frame:
         cursor = self.connection.cursor()
 
@@ -43,6 +44,7 @@ class SQLFrame(RemoteFrame):
         result = cursor.fetchall()
         return DataFrame(result, Axis.row)
 
+    @validate_arguments
     def apply(self, x: Callable, axis: Axis = Axis.col) -> Frame:
         print_warning(
             "This function call currently just invokes the pnguin.core.DataFrame class' apply function, and needs a facelift. If you'd like to give us a hand, please check out: https://github.com/raghavmecheri/pnguin/issues/9",
@@ -53,11 +55,16 @@ class SQLFrame(RemoteFrame):
         df = df.apply(x, axis)
         return df
 
-    def to_csv(self) -> Frame:
-        return None
+    @validate_arguments
+    def to_csv(self, filename: str) -> Frame:
+        data = self._get_data()
+        df = DataFrame(data, Axis.col)
+        df.to_csv(filename)
 
-    def to_df(self) -> Frame:
-        return None
+    @validate_arguments
+    def to_df(self, axis: Axis = Axis.col) -> Frame:
+        data = self._get_data()
+        return DataFrame(data, axis)
 
     def _to_string(self):
         return self.head()

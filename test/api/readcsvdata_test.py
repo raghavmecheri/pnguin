@@ -1,7 +1,7 @@
 import pytest
 import json
 
-import pnguin as pg
+import pnguin as pn
 
 
 def _fetch_mock_payloads():
@@ -17,9 +17,9 @@ def test_read_csv_data(payload):
         payload["specifyHeaders"],
     )
     if not need_headers:
-        data = pg.api.io.read_csv_to_data(path)
+        data = pn.api.io.read_csv_to_data(path)
     else:
-        data = pg.api.io.read_csv_to_data(
+        data = pn.api.io.read_csv_to_data(
             path, headers=["one", "two", "three", "four", "five"]
         )
     assert len(data) == length

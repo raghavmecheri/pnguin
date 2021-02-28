@@ -1,7 +1,7 @@
 import pytest
 import json
 
-import pnguin as pg
+import pnguin as pn
 
 
 def _fetch_mock_payloads():
@@ -19,9 +19,9 @@ def test_read_csv_data(payload):
     )
 
     if not need_headers:
-        df = pg.read_csv(path, axis=axis)
+        df = pn.read_csv(path, axis=axis)
     else:
-        df = pg.read_csv(
+        df = pn.read_csv(
             path, axis=axis, headers=["one", "two", "three", "four", "five"]
         )
 

@@ -1,0 +1,61 @@
+[{
+	"op": ">",
+	"target": "abcd",
+	"row": {"test": "bcd"},
+	"result": true
+}, {
+	"op": "<",
+	"target": "efg",
+	"row": {"test": "bcd"},
+	"result": true
+}, {
+	"op": "<",
+	"target": "def",
+	"row": {"test": "ghi"},
+	"result": false
+}, {
+	"op": ">",
+	"target": "bcd",
+	"row": {"test": "abc"},
+	"result": false
+}, {
+	"op": ">=",
+	"target": "a",
+	"row": {"test": "a"},
+	"result": true
+}, {
+	"op": "<=",
+	"target": "z",
+	"row": {"test": "z"},
+	"result": true
+}, {
+	"op": ">=",
+	"target": "z",
+	"row": {"test": "a"},
+	"result": false
+}, {
+	"op": "<=",
+	"target": "b",
+	"row": {"test": "c"},
+	"result": false
+}, {
+	"op": "==",
+	"target": "abcd",
+	"row": {"test": "abcd"},
+	"result": true
+}, {
+	"op": "==",
+	"target": "abc",
+	"row": {"test": "bcd"},
+	"result": false
+}, {
+	"op": "IN",
+	"target": ["hello", "world", "foo", "bar"],
+	"row": {"test": "foo"},
+	"result": true
+}, {
+	"op": "IN",
+	"target": ["hello", "world", "foo", "bar"],
+	"row": {"test": "hi"},
+	"result": false
+}]

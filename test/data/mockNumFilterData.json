@@ -1,0 +1,61 @@
+[{
+	"op": ">",
+	"target": 20,
+	"row": {"test": 30},
+	"result": true
+}, {
+	"op": "<",
+	"target": 20,
+	"row": {"test": 10},
+	"result": true
+}, {
+	"op": "<",
+	"target": 20,
+	"row": {"test": 30},
+	"result": false
+}, {
+	"op": ">",
+	"target": 20,
+	"row": {"test": 10},
+	"result": false
+}, {
+	"op": ">=",
+	"target": 20,
+	"row": {"test": 20},
+	"result": true
+}, {
+	"op": "<=",
+	"target": 20,
+	"row": {"test": 20},
+	"result": true
+}, {
+	"op": ">=",
+	"target": 20,
+	"row": {"test": 15},
+	"result": false
+}, {
+	"op": "<=",
+	"target": 20,
+	"row": {"test": 50},
+	"result": false
+}, {
+	"op": "==",
+	"target": 20,
+	"row": {"test": 20},
+	"result": true
+}, {
+	"op": "==",
+	"target": 20,
+	"row": {"test": 40},
+	"result": false
+}, {
+	"op": "IN",
+	"target": [10, 20, 30, 40],
+	"row": {"test": 40},
+	"result": true
+}, {
+	"op": "IN",
+	"target": [10, 20, 30, 40],
+	"row": {"test": 50},
+	"result": false
+}]

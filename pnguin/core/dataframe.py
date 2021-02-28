@@ -4,6 +4,7 @@ from pydantic import validate_arguments, ValidationError
 from typing import Callable
 
 from pnguin.core.frame import Frame
+from pnguin.core.filter import Filter
 from pnguin.models import Axis
 from pnguin.api.utils import (
     format_input,
@@ -106,6 +107,10 @@ class DataFrame(Frame):
             self.data = format_input(applied, self.axis)
             return None
         return DataFrame(applied, self.axis)
+
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+    def filter(self, filter: Filter):
+        return self
 
     @validate_arguments
     def iterate(self):

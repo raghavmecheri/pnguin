@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from pnguin.models import Axis
+from pnguin.core.filter import Filter
+
 from typing import Callable
 
 
@@ -12,6 +14,9 @@ class Frame:
         pass
 
     def apply(self, x: Callable, axis: Axis = Axis.col, inplace: bool = False):
+        pass
+
+    def filter(self, filter: Filter):
         pass
 
     def iterate(self):
@@ -34,10 +39,10 @@ class RemoteFrame:
     def apply(self, x: Callable, axis: Axis = Axis.col) -> Frame:
         pass
 
-    def to_csv(self) -> Frame:
+    def to_csv(self, filename: str) -> Frame:
         pass
 
-    def to_df(self) -> Frame:
+    def to_df(self, axis: Axis) -> Frame:
         pass
 
     def __getitem__(self, key) -> RemoteFrame:

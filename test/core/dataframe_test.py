@@ -1,7 +1,7 @@
 import pytest
 import json
 
-import pnguin as pg
+import pnguin as pn
 
 
 def _fetch_mock_payloads():
@@ -30,7 +30,7 @@ def _nanify(payload):
 @pytest.mark.parametrize("payload", [x for x in _fetch_mock_payloads()])
 def test_create(payload):
     data, axis = payload["data"], payload["axis"]
-    df = pg.DataFrame(data=data, axis=axis)
+    df = pn.DataFrame(data=data, axis=axis)
     if type(df.data) == type(data):
         assert df.data == data
     if axis == "row":
@@ -45,7 +45,7 @@ def test_head(payload):
         assert len(head._data_as_rows()) == (x if original_len > x else original_len)
 
     data, axis = payload["data"], payload["axis"]
-    df = pg.DataFrame(data=data, axis=axis)
+    df = pn.DataFrame(data=data, axis=axis)
     ranges = [1, 2, 3, 4, 5]
     for r in ranges:
         original_len = (
@@ -57,7 +57,7 @@ def test_head(payload):
 @pytest.mark.parametrize("payload", [_nanify(x) for x in _fetch_mock_payloads()])
 def test_dropna(payload):
     data, clean_len, axis = payload["data"], payload["clean_len"], payload["axis"]
-    df = pg.DataFrame(data=data, axis=axis).dropna()
+    df = pn.DataFrame(data=data, axis=axis).dropna()
     rows = df._data_as_rows()
     assert len(rows) is clean_len
 
@@ -69,6 +69,6 @@ def test_apply():
 @pytest.mark.parametrize("payload", [_nanify(x) for x in _fetch_mock_payloads()])
 def test_tostring(payload):
     data, axis = payload["data"], payload["axis"]
-    df = pg.DataFrame(data=data, axis=axis)
+    df = pn.DataFrame(data=data, axis=axis)
     x = df._to_string()
     assert x is not None
