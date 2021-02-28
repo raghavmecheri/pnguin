@@ -1,0 +1,67 @@
+[{
+	"axis": "col",
+	"data": {
+		"test": [10, 20, 30],
+		"temp": ["Hello", "Hello2", "Hello3"]
+	},
+	"op": ">",
+	"target": 15,
+	"length": 2
+}, {
+	"axis": "row",
+	"data": {
+		"test": [10, 20, 30],
+		"temp": ["Hello", "Hello2", "Hello3"]
+	},
+	"op": ">",
+	"target": 15,
+	"length": 2
+}, {
+	"axis": "row",
+	"data": [{
+		"test": 10,
+		"temp": "Hello"
+	}, {
+		"test": 20,
+		"temp": "Hello2"
+	}, {
+		"test": 30,
+		"temp": "Hello3"
+	}],
+	"op": ">",
+	"target": 15,
+	"length": 2
+}, {
+	"axis": "col",
+	"data": [{
+		"test": 10,
+		"temp": "Hello"
+	}, {
+		"test": 20,
+		"temp": "Hello2"
+	}, {
+		"test": 30,
+		"temp": "Hello3"
+	}],
+	"op": ">",
+	"target": 15,
+	"length": 2
+}, {
+	"axis": "col",
+	"data": {
+		"test": [10, 20, 30],
+		"temp": ["Hello", "Hello2", "Hello3"]
+	},
+	"op": "IN",
+	"target": [10, 20],
+	"length": 2
+}, {
+	"axis": "row",
+	"data": {
+		"test": [10, 20, 30],
+		"temp": ["Hello", "Hello2", "Hello3"]
+	},
+	"op": "IN",
+	"target": [10],
+	"length": 1
+}]

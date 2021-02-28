@@ -109,8 +109,13 @@ class DataFrame(Frame):
         return DataFrame(applied, self.axis)
 
     @validate_arguments(config=dict(arbitrary_types_allowed=True))
-    def filter(self, filter: Filter):
-        return self
+    def filter(self, f: Filter):
+        data = self._data_as_rows()
+        filtered = []
+        for row in data:
+            if f.does_conform(row):
+                filtered.append(row)
+        return DataFrame(filtered, self.axis)
 
     @validate_arguments
     def iterate(self):

@@ -9,6 +9,11 @@ def _fetch_mock_payloads():
         return json.load(f)
 
 
+def _fetch_mock_filter_payloads():
+    with open("test/data/mockFilters.json") as f:
+        return json.load(f)
+
+
 def _nanify(payload):
     def _modify(x):
         if isinstance(x, dict):
@@ -60,6 +65,21 @@ def test_dropna(payload):
     df = pn.DataFrame(data=data, axis=axis).dropna()
     rows = df._data_as_rows()
     assert len(rows) is clean_len
+
+
+@pytest.mark.parametrize("payload", [x for x in _fetch_mock_filter_payloads()])
+def test_filter(payload):
+    data, op, target, length, axis = (
+        payload["data"],
+        payload["op"],
+        payload["target"],
+        payload["length"],
+        payload["axis"],
+    )
+    df = pn.DataFrame(data=data, axis=axis)
+    f = pn.Filter("test", op, target)
+    res = df.filter(f)
+    assert len(res.data) is length
 
 
 def test_apply():
