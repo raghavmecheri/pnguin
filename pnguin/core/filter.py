@@ -27,6 +27,19 @@ class Filter:
             raise "Filter operation failed with error: {}".format(e)
         return False
 
+    @validate_arguments
+    def to_sql(self):
+        def _fix_if_needed(op, target):
+            if op == FilterOp.contains:
+                return "({})".format(",".join(['"{0}"'.format(x) for x in target]))
+            return '"{}"'.format(target) if isinstance(target, str) else target
+
+        return "{}{}{}".format(
+            self.column,
+            FilterOp.fetch_sql(self.operation),
+            _fix_if_needed(self.operation, self.target),
+        )
+
     def _validate_params(self):
         def _op_check(op, target):
             if op == FilterOp.contains:

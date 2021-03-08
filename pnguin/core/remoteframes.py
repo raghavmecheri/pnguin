@@ -5,6 +5,7 @@ from typing import Any, Callable
 
 from pnguin.core.frame import RemoteFrame, Frame
 from pnguin.core.dataframe import DataFrame
+from pnguin.core.filter import Filter
 from pnguin.models import Axis
 from pnguin.api.utils import (
     format_input,
@@ -55,6 +56,10 @@ class SQLFrame(RemoteFrame):
         df = df.apply(x, axis)
         return df
 
+    @validate_arguments(config=dict(arbitrary_types_allowed=True))
+    def filter(self, f: Filter):
+        self.query_list.append(f)
+
     @validate_arguments
     def to_csv(self, filename: str) -> Frame:
         data = self._get_data()
@@ -76,12 +81,27 @@ class SQLFrame(RemoteFrame):
         return self._to_string()
 
     def _get_data(self, limit: int = 0):
+        if len(self.query_list) == 1:
+            where = self.query_list[0].to_sql()
+        elif len(self.query_list) > 1:
+            where = " AND ".join([x.to_sql() for x in self.query_list])
+        else:
+            where = None
         cursor = self.connection.cursor()
-        sql = (
-            "SELECT * FROM `{}` LIMIT {}".format(self.table_name, limit)
-            if limit > 0
-            else "SELECT * FROM `{}`".format(self.table_name)
-        )
+        if where is None:
+            sql = (
+                "SELECT * FROM `{}` LIMIT {}".format(self.table_name, limit)
+                if limit > 0
+                else "SELECT * FROM `{}`".format(self.table_name)
+            )
+        else:
+            sql = (
+                "SELECT * FROM `{}` WHERE ({}) LIMIT {}".format(
+                    self.table_name, where, limit
+                )
+                if limit > 0
+                else "SELECT * FROM `{}` WHERE ({})".format(self.table_name, where)
+            )
         cursor.execute(sql)
         result = cursor.fetchall()
         return result

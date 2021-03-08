@@ -39,6 +39,9 @@ class RemoteFrame:
     def apply(self, x: Callable, axis: Axis = Axis.col) -> Frame:
         pass
 
+    def filter(self, filter: Filter):
+        pass
+
     def to_csv(self, filename: str) -> Frame:
         pass
 

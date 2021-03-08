@@ -9,6 +9,8 @@ operations = {
     "IN": lambda lhs, rhs: lhs in rhs,
 }
 
+sql_map = {"<": "<", ">": ">", "<=": "<=", ">=": ">=", "==": "=", "IN": "IN"}
+
 
 def perform_filter(lhs, operator, rhs):
     operation = operations[operator]
@@ -22,3 +24,7 @@ class FilterOp(str, Enum):
     leq = "<="
     geq = ">="
     contains = "IN"
+
+    @classmethod
+    def fetch_sql(cls, op):
+        return sql_map[op]
