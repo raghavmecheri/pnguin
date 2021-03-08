@@ -110,6 +110,14 @@ class DataFrame(Frame):
 
     @validate_arguments(config=dict(arbitrary_types_allowed=True))
     def filter(self, f: Filter):
+        """Filter out data from a DataFrame based on the given filter object
+        
+        Args:
+            f (pnguin.core.Filter): An instance of the pnguin Filter class
+            
+        Returns:
+            (pnguin.DataFrame or None)
+        """
         data = self._data_as_rows()
         filtered = []
         for row in data:
